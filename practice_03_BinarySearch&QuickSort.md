@@ -45,7 +45,7 @@ public int binarySearch(int[] arr, int target) {
     int right = arr.length - 1;
     int mid;
     while (left + 1 < right) {
-        mid = left + (left + right) / 2;
+        mid = left + (left - right) / 2;
         if (arr[mid] == target) {
             return mid;
         } else if (arr[mid] < target) {
@@ -55,7 +55,7 @@ public int binarySearch(int[] arr, int target) {
         }
     }
     // post processing
-    Math.abs(arr[left] - target) <= Math.abs(arr[right] - target) ? return left : return right;
+    (Math.abs(arr[left] - target) <= Math.abs(arr[right] - target)) ? return left : return right;
 }
 ```
 
